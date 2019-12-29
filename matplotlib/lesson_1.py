@@ -1,4 +1,3 @@
-#import matplotlib as mpl
 import matplotlib.pyplot as plt
 import os
 import numpy as np
@@ -41,3 +40,18 @@ def figure_2():
     save('pic_1_4_2', fmt='png')
 
     plt.show()
+
+def figure_3():
+    lag = 0.1
+    x = np.arange(0.0, 2*np.pi+lag, lag)
+    y = np.sin(x)
+    fig = plt.figure()
+    plt.plot(x, y)
+
+    plt.grid(True)
+
+    save('pic_1_5_1', fmt='png')
+
+    plt.show()
+
+figure_3()
