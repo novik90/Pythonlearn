@@ -1,5 +1,4 @@
-from flask import Flask, flash, redirect, render_template, request
-from random import randint
+from flask import Flask
 
 app = Flask(__name__)
 
