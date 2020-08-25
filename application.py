@@ -1,18 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, make_response
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	us_ag = request.user_agent
+	return render_template('index.html', us_ag = us_ag)
 
 @app.route('/page')
 def page():
 	return render_template('page.html')
-
-@app.route('/work/<id>')
-def work(id):
-	return "Work with id {}".format(id)
 
 if __name__ == '__main__':
 	app.run()
