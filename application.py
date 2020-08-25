@@ -14,5 +14,19 @@ def index():
 def page():
 	return render_template('page.html')
 
+@app.route('/success', methods = ['POST', 'GET'])
+def success():
+	result = request.form
+	reqJson = request.json
+	print(reqJson)
+	if request.form['testval'] == '' or request.form['testval2'] == '':
+		error = "entered empty fields, try again"
+		return render_template('page.html', error=error)
+	return render_template('page.html', result=result)
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('error.html'), 404
+
 if __name__ == '__main__':
 	app.run()

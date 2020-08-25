@@ -8,6 +8,22 @@
 			</ul>
 		</nav>
 		<h1>Page</h1>
+		<ul>
+		{% if result%}
+			{%for i, k in result.items()%}
+				<li>
+					{{ k }}
+				</li>
+			{%endfor%}
+		{% endif %}
+		</ul>
 		<p style="font-size: 5px">волк волку волк</p>
+		<form method="post" action="/success">
+			<input type="text" name="testval">
+			<input type="text" name="testval2">
+			<input type="submit" value="Submit"/>
+		</form>
+
+		{{ error }}
 	</body>
 </html>
